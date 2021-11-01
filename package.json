@@ -1,0 +1,13 @@
+{
+    "dependencies": {
+        "typescript": "<=2.4.1",
+        "webfontloader": "^1.6.27",
+        "@types/webfontloader": "^1.6.27",
+        "pixi.js": "^4.5.0",
+        "@types/pixi.js": "^4.5.0",
+        "pixi-particles": "^2.1.5",
+        "jquery": "<3.3.5",
+        "@types/jquery": "<3.3.5",
+        "gsap": "<=1.20.2"
+    }
+}

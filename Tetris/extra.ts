@@ -1,3 +1,4 @@
+/// <reference path="../node_modules/pixi-particles/ambient.d.ts" />
 namespace Util {
 
 	export namespace colors {
@@ -85,13 +86,13 @@ module Block {
 			if (fromC == toC)
 				return fromO == toO;
 
-			let dc = Util.sign(toC - fromC); // ÒÑ¾­±£Ö¤²»ÊÇ0ÁË
+			let dc = Util.sign(toC - fromC); // ï¿½Ñ¾ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½
 
-			// Ö±½ÓÒÆ¶¯£¿
+			// Ö±ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½
 			if (this.findHorizontalRouteTo2(r, fromC + dc, fromO, toC, toO))
 				return true;
 
-			// »òÕßÏÈÔ­µØÐý×ªÔÙÒÆ¶¯
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½Æ¶ï¿½
 			for (let i = 1; i < 4; i++) {
 				let o = (fromO - i + 4) % 4;
 				if (this.check(r, fromC, o)) {
@@ -110,16 +111,16 @@ module Block {
 			let dc = Util.sign(node.c - this.c);
 			let upperR = this.r, lowerR = node.r;
 
-			// Ã¶¾Ù¹Õµã
+			// Ã¶ï¿½Ù¹Õµï¿½
 			for (let turningPoint = this.c; ; turningPoint += dc) {
-				// Ã¶¾Ù¹Õµã´¦µÄ³¯Ïò
+				// Ã¶ï¿½Ù¹Õµã´¦ï¿½Ä³ï¿½ï¿½ï¿½
 				for (let o = 0; o < 4; o++) {
-					// ÏÈ¼ì²éÊÇ·ñ¿ÉÄÜ
+					// ï¿½È¼ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 					if (!this.check(upperR, turningPoint, o) ||
 						!this.check(lowerR, turningPoint, o))
 						continue;
 
-					// ÔÙ·Ö±ð¼ì²é¿¿ÉÏÒ»¶ÎºÍ¿¿ÏÂÒ»¶Î
+					// ï¿½Ù·Ö±ï¿½ï¿½é¿¿ï¿½ï¿½Ò»ï¿½ÎºÍ¿ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 					if (this.findHorizontalRouteTo2(upperR, this.c, this.orientation, turningPoint, o) &&
 						this.findHorizontalRouteTo2(lowerR, turningPoint, o, node.c, node.o))
 						return true;

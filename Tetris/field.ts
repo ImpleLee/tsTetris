@@ -121,7 +121,7 @@ class GameField extends PIXI.Graphics {
 	}
 
 	decorate() {
-		this.parent.addChild(
+		this.parent.addChild<PIXI.DisplayObject>(
 			this.selector = new TetrominoSelector(this),
 			this.border = new FieldBorder(this),
 			this.indicator = new FieldIndicator(this),
@@ -289,7 +289,7 @@ class GameField extends PIXI.Graphics {
 		return child.setRC(undefined, undefined, immediate) || this.stage.addChild(child);
 	}
 
-	removeChild(child: FieldProp): PIXI.DisplayObject {
+	removeChild<T extends PIXI.DisplayObject = PIXI.Container>(child: FieldProp): T {
 		return this.stage.removeChild(child);
 	}
 

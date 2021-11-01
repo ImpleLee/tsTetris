@@ -338,7 +338,7 @@ class TetrominoSelector extends PIXI.Graphics {
 
 	public putChildOnStage() {
 		for (let i = 0; i < Block.Tetromino.TYPE_COUNT; i++) 
-			this.gameField.stage.addChild(this.tetrominos[i], this.txtCount[i]);
+			this.gameField.stage.addChild<PIXI.DisplayObject>(this.tetrominos[i], this.txtCount[i]);
 		this.rotating[0].play();
 	}
 

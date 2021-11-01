@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "jsx": "preserve",
+        "outFile": "Tetris/app.js",
+        "outDir": "Tetris",
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
